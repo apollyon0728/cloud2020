@@ -1,0 +1,31 @@
+【Spring cloud 配置中心】：
+
+spring cloud使用GIT管理“配置信息”，在 ConfigCenterMain3344 “application.yml”中配置“git 配置的URL地址”;
+
+EurekaMain7001中启动eureka，client端通过访问eureka访问配置信息
+
+ConfigClientMain3355客户端配置eureka信息，并访问git管理的配置信息
+
+
+
+【问题】
+1.Spring cloud config 为什么要注册到 eureka？
+参考：https://www.zhihu.com/question/404626297
+
+跟普通的业务服务注册到eureka一样的道理，注册到eureka，可以动态扩容，迁移，不需要修改业务服务不注册到eureka，
+就需要在业务服务中写死spring cloud config的地址，如果以后spring cloud config服务迁移到其他服务器就需要所有的业务服务修改
+
+
+
+
+============【参考文章】============
+SpringCloud学习系列之四-----配置中心(Config)使用详解
+https://blog.csdn.net/qazwsxpcm/article/details/88578076
+
+
+Spring Cloud Config 实现配置中心，看这一篇就够了
+https://www.cnblogs.com/fengzheng/p/11242128.html
+
+
+Spring Cloud Config分布式配置中心
+https://www.bilibili.com/read/cv8757493/
